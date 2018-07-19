@@ -40,7 +40,7 @@
         <item name="android:onClick">nextPage</item>
     </style>
 
-    <style name="btnPret">
+    <style name="btnPre">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_alignParentBottom">true</item>

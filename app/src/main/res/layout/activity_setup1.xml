@@ -6,7 +6,7 @@
 
     <TextView
         style="@style/TitleStyle"
-        android:text="欢迎使用手机防盗" />
+        android:text="1.欢迎使用手机防盗" />
 
     <TextView
         android:layout_width="wrap_content"

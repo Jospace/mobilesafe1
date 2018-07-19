@@ -47,6 +47,8 @@
             android:label="SetupOverActivity" />
         <activity android:name="com.example.mobilesafe.activity.Setup1Activity" />
         <activity android:name="com.example.mobilesafe.activity.Setup2Activity" />
+        <activity android:name="com.example.mobilesafe.activity.Setup3Activity" />
+        <activity android:name="com.example.mobilesafe.activity.Setup4Activity" />
 
         <meta-data
             android:name="android.support.VERSION"

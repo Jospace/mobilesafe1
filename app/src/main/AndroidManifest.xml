@@ -44,7 +44,9 @@
             android:name=".activity.SetupOverActivity"
             android:label="SetupOverActivity" />
         <activity android:name=".activity.Setup1Activity" />
-        <activity android:name=".activity.Setup2Activity"></activity>
+        <activity android:name=".activity.Setup2Activity" />
+        <activity android:name=".activity.Setup3Activity" />
+        <activity android:name=".activity.Setup4Activity"></activity>
     </application>
 
 </manifest>

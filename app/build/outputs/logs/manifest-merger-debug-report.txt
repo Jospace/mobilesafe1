@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from E:\AndroidStudioProject\mobilesafe\app\src\main\AndroidManifest.xml:2:1-50:12
-INJECTED from E:\AndroidStudioProject\mobilesafe\app\src\main\AndroidManifest.xml:2:1-50:12
-INJECTED from E:\AndroidStudioProject\mobilesafe\app\src\main\AndroidManifest.xml:2:1-50:12
-INJECTED from E:\AndroidStudioProject\mobilesafe\app\src\main\AndroidManifest.xml:2:1-50:12
+ADDED from E:\AndroidStudioProject\mobilesafe\app\src\main\AndroidManifest.xml:2:1-52:12
+INJECTED from E:\AndroidStudioProject\mobilesafe\app\src\main\AndroidManifest.xml:2:1-52:12
+INJECTED from E:\AndroidStudioProject\mobilesafe\app\src\main\AndroidManifest.xml:2:1-52:12
+INJECTED from E:\AndroidStudioProject\mobilesafe\app\src\main\AndroidManifest.xml:2:1-52:12
 MERGED from [com.android.support:appcompat-v7:26.1.0] C:\Users\Joe\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.1.0.aar\6716e4b5ea5f2e443475fd44bcd96c63\AndroidManifest.xml:17:1-31:12
 MERGED from [com.android.support:support-v4:26.1.0] C:\Users\Joe\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\6a057006d1d3ba66d6d449f089c040c5\AndroidManifest.xml:17:1-31:12
 MERGED from [com.android.support.constraint:constraint-layout:1.1.2] C:\Users\Joe\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.2.aar\3ed6fcddc1a14930698b2004c2806558\AndroidManifest.xml:2:1-11:12
@@ -15,9 +15,9 @@ MERGED from [com.android.support:support-core-ui:26.1.0] C:\Users\Joe\.gradle\ca
 MERGED from [com.android.support:support-vector-drawable:26.1.0] C:\Users\Joe\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-26.1.0.aar\7ea38a1e746c3044a13937c874aef499\AndroidManifest.xml:17:1-28:12
 MERGED from [com.android.support:support-compat:26.1.0] C:\Users\Joe\.gradle\caches\transforms-1\files-1.1\support-compat-26.1.0.aar\b588c987b1acf11b425cd9afb9cdd2b0\AndroidManifest.xml:17:1-31:12
 MERGED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\Joe\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\adbb9df29c526d32baf1a03a9899b788\AndroidManifest.xml:17:1-30:12
-INJECTED from E:\AndroidStudioProject\mobilesafe\app\src\main\AndroidManifest.xml:2:1-50:12
-INJECTED from E:\AndroidStudioProject\mobilesafe\app\src\main\AndroidManifest.xml:2:1-50:12
-INJECTED from E:\AndroidStudioProject\mobilesafe\app\src\main\AndroidManifest.xml:2:1-50:12
+INJECTED from E:\AndroidStudioProject\mobilesafe\app\src\main\AndroidManifest.xml:2:1-52:12
+INJECTED from E:\AndroidStudioProject\mobilesafe\app\src\main\AndroidManifest.xml:2:1-52:12
+INJECTED from E:\AndroidStudioProject\mobilesafe\app\src\main\AndroidManifest.xml:2:1-52:12
 	package
 		ADDED from E:\AndroidStudioProject\mobilesafe\app\src\main\AndroidManifest.xml:3:5-37
 		INJECTED from E:\AndroidStudioProject\mobilesafe\app\src\main\AndroidManifest.xml
@@ -87,7 +87,7 @@ ADDED from E:\AndroidStudioProject\mobilesafe\app\src\main\AndroidManifest.xml:2
 	android:name
 		ADDED from E:\AndroidStudioProject\mobilesafe\app\src\main\AndroidManifest.xml:21:22-77
 application
-ADDED from E:\AndroidStudioProject\mobilesafe\app\src\main\AndroidManifest.xml:23:5-48:19
+ADDED from E:\AndroidStudioProject\mobilesafe\app\src\main\AndroidManifest.xml:23:5-50:19
 MERGED from [com.android.support:appcompat-v7:26.1.0] C:\Users\Joe\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.1.0.aar\6716e4b5ea5f2e443475fd44bcd96c63\AndroidManifest.xml:25:5-29:19
 MERGED from [com.android.support:appcompat-v7:26.1.0] C:\Users\Joe\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.1.0.aar\6716e4b5ea5f2e443475fd44bcd96c63\AndroidManifest.xml:25:5-29:19
 MERGED from [com.android.support:support-v4:26.1.0] C:\Users\Joe\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\6a057006d1d3ba66d6d449f089c040c5\AndroidManifest.xml:25:5-29:19
@@ -157,9 +157,17 @@ ADDED from E:\AndroidStudioProject\mobilesafe\app\src\main\AndroidManifest.xml:4
 	android:name
 		ADDED from E:\AndroidStudioProject\mobilesafe\app\src\main\AndroidManifest.xml:46:19-58
 activity#com.example.mobilesafe.activity.Setup2Activity
-ADDED from E:\AndroidStudioProject\mobilesafe\app\src\main\AndroidManifest.xml:47:9-70
+ADDED from E:\AndroidStudioProject\mobilesafe\app\src\main\AndroidManifest.xml:47:9-61
 	android:name
 		ADDED from E:\AndroidStudioProject\mobilesafe\app\src\main\AndroidManifest.xml:47:19-58
+activity#com.example.mobilesafe.activity.Setup3Activity
+ADDED from E:\AndroidStudioProject\mobilesafe\app\src\main\AndroidManifest.xml:48:9-61
+	android:name
+		ADDED from E:\AndroidStudioProject\mobilesafe\app\src\main\AndroidManifest.xml:48:19-58
+activity#com.example.mobilesafe.activity.Setup4Activity
+ADDED from E:\AndroidStudioProject\mobilesafe\app\src\main\AndroidManifest.xml:49:9-70
+	android:name
+		ADDED from E:\AndroidStudioProject\mobilesafe\app\src\main\AndroidManifest.xml:49:19-58
 meta-data#android.support.VERSION
 ADDED from [com.android.support:appcompat-v7:26.1.0] C:\Users\Joe\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.1.0.aar\6716e4b5ea5f2e443475fd44bcd96c63\AndroidManifest.xml:26:9-28:38
 MERGED from [com.android.support:support-v4:26.1.0] C:\Users\Joe\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\6a057006d1d3ba66d6d449f089c040c5\AndroidManifest.xml:26:9-28:38

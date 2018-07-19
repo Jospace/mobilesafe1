@@ -23,7 +23,7 @@ public class Setup1Activity extends Activity {
 	 * @param v
 	 */
 	public  void nextPage(View v){
-		Intent intent = new Intent(Setup1Activity.this, Setup2Activity.class);
+		Intent intent = new Intent(getApplicationContext(), Setup2Activity.class);
 		startActivity(intent);
 		finish();
 	}
