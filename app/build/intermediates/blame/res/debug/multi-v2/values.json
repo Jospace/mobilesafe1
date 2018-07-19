@@ -78,20 +78,20 @@
                 {
                     "source": "E:\\AndroidStudioProject\\mobilesafe\\app\\src\\main\\res\\values\\styles.xml",
                     "from": {
-                        "startLines": "6,15,22",
-                        "startColumns": "4,4,4",
-                        "startOffsets": "191,522,810",
-                        "endLines": "12,19,29",
-                        "endColumns": "12,12,12",
-                        "endOffsets": "481,776,1185"
+                        "startLines": "6,15,22,31,42",
+                        "startColumns": "4,4,4,4,4",
+                        "startOffsets": "192,525,809,1192,1741",
+                        "endLines": "12,19,29,40,51",
+                        "endColumns": "12,12,12,12,12",
+                        "endOffsets": "484,779,1184,1733,2283"
                     },
                     "to": {
-                        "startLines": "564,571,1890",
-                        "startColumns": "4,4,4",
-                        "startOffsets": "51315,51606,139468",
-                        "endLines": "570,575,1897",
-                        "endColumns": "12,12,12",
-                        "endOffsets": "51601,51856,139836"
+                        "startLines": "564,571,1890,1994,2004",
+                        "startColumns": "4,4,4,4,4",
+                        "startOffsets": "51315,51606,139468,147550,148087",
+                        "endLines": "570,575,1897,2003,2013",
+                        "endColumns": "12,12,12,12,12",
+                        "endOffsets": "51601,51856,139836,148082,148620"
                     }
                 },
                 {

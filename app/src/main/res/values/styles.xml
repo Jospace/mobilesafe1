@@ -18,7 +18,7 @@
         <item name="android:windowFullscreen">true</item>
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
     </style>
-    
+
     <!-- 自定义标题样式 -->
     <style name="TitleStyle">
         <item name="android:layout_width">match_parent</item>
@@ -29,4 +29,25 @@
         <item name="android:textSize">20sp</item>
     </style>
 
+    <style name="btnNext">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_alignParentBottom">true</item>
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:drawableRight">@drawable/next</item>
+        <item name="android:background">@drawable/selector_btn_next_bg</item>
+        <item name="android:text">下一页</item>
+        <item name="android:onClick">nextPage</item>
+    </style>
+
+    <style name="btnPret">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_alignParentBottom">true</item>
+        <item name="android:layout_alignParentLeft">true</item>
+        <item name="android:drawableLeft">@drawable/previous</item>
+        <item name="android:background">@drawable/selector_btn_next_bg</item>
+        <item name="android:text">上一页</item>
+        <item name="android:onClick">prePage</item>
+    </style>
 </resources>
