@@ -32,18 +32,6 @@ public class SettingActivity extends Activity {
 		boolean open_update = SpUtil.getBoolean(this, ConstantValue.OPEN_UPDATE, false);
 		siv_setting.setCheck(open_update);
 		
-		//添加cb_box视图对象的状态切换监听
-		cb_box.setOnCheckedChangeListener(new OnCheckedChangeListener() {
-			
-			@Override
-			public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-				// TODO Auto-generated method stub
-				siv_setting.setCheck(isChecked);
-				SpUtil.putBoolean(getApplicationContext(), ConstantValue.OPEN_UPDATE,isChecked);
-				Log.i("TAG", "点击了按钮"+isChecked);
-			}
-		});
-		
 		// 添加视图对象的点击监听
 		siv_setting.setOnClickListener(new OnClickListener() {
 			@Override

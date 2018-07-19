@@ -29,8 +29,8 @@
         android:id="@+id/siv_bind"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        mobilesafe:desoff="sim卡绑定已关闭"
-        mobilesafe:deson="sim卡绑定已开启"
+        mobilesafe:desoff="sim卡未绑定"
+        mobilesafe:deson="sim卡已绑定"
         mobilesafe:destitle="点击绑定sim卡"></com.example.mobilesafe.view.SettingItemView>
 
 

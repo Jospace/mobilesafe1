@@ -12,7 +12,6 @@
             android:id="@+id/tv_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="自动更新设置"
             android:textSize="18sp" />
 
         <TextView
@@ -20,11 +19,17 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/tv_title"
-            android:text="自动更新已关闭"
             android:textSize="18sp" />
 
+        <!--android:clickable="false"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            以上三个属性不让checkBox获取焦点，不能点击-->
         <CheckBox
             android:id="@+id/cb_box"
+            android:clickable="false"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"

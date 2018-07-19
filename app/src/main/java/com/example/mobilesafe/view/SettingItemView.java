@@ -57,7 +57,6 @@ public class SettingItemView extends RelativeLayout {
 
 	/**
 	 * 判断SettingItemView对象是否被选中
-	 *
 	 * @return 与checkBox的选中状态保持一致
 	 */
 	public boolean isChecked() {
@@ -67,16 +66,15 @@ public class SettingItemView extends RelativeLayout {
 
 	/**
 	 * 更新checkBox的选中状态，并更新tv_desc的文本
-	 *
 	 * @param isCheck
 	 */
 	public void setCheck(boolean isCheck) {
 		Log.i("TAG", "调用了setCheck方法");
 		cb_box.setChecked(isCheck);
 		if (isCheck) {
-			tv_desc.setText("自动更新已开启");
+			tv_desc.setText(deson);
 		} else {
-			tv_desc.setText("自动更新已关闭");
+			tv_desc.setText(desoff);
 		}
 	}
 

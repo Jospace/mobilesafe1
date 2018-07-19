@@ -19,11 +19,13 @@
         android:textSize="18sp" />
 
     <EditText
+        android:id="@+id/et_phone_num"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="请输入安全号码" />
 
     <Button
+        android:id="@+id/btn_select_contact"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/selector_phone_number"

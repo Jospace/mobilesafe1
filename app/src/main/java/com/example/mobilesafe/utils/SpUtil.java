@@ -63,4 +63,18 @@ public class SpUtil {
 		//得到sp中对应节点的值
 		return sp.getString(key, defValue);
 	}
+
+	/**
+	 * 删除sp中对应节点
+	 * @param ctx 上下文对象
+	 * @param key 节点
+	 */
+	public static void remove(Context ctx, String key) {
+		//存储文件节点名称，读写方式
+		if(sp == null) {
+			sp = ctx.getSharedPreferences("config", Context.MODE_PRIVATE);
+		}
+		//得到sp编辑器,删除对应节点，提交
+		sp.edit().remove(key).commit();
+	}
 }

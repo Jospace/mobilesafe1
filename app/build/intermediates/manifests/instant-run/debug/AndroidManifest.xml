@@ -13,12 +13,16 @@
     <uses-sdk
         android:minSdkVersion="18"
         android:targetSdkVersion="26" />
+    <!-- 添加读取手机状态的权限 -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <!-- 添加联网权限 -->
     <uses-permission android:name="android.permission.INTERNET" />
     <!-- 添加SD卡读写权限 -->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <!-- 添加读取联系人的权限 -->
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
 
     <application
         android:allowBackup="true"
@@ -49,6 +53,7 @@
         <activity android:name="com.example.mobilesafe.activity.Setup2Activity" />
         <activity android:name="com.example.mobilesafe.activity.Setup3Activity" />
         <activity android:name="com.example.mobilesafe.activity.Setup4Activity" />
+        <activity android:name="com.example.mobilesafe.activity.ContactSelectActivity" />
 
         <meta-data
             android:name="android.support.VERSION"
