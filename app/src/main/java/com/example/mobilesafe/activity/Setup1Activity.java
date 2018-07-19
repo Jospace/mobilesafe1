@@ -14,7 +14,5 @@ public class Setup1Activity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_setup1);
-		Log.i(TAG, "onCreate: 测试一下Git的使用");
-
 	}
 }
