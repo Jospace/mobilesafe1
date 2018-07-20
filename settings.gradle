@@ -1,1 +1,2 @@
-include ':app'
+include ':heimaApp01_mobilesafe'
+include ':app06_MotionEvent'

@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/mobilesafe.iml" filepath="$PROJECT_DIR$/mobilesafe.iml" />
+      <module fileurl="file://$PROJECT_DIR$/AndroidStudioSpace.iml" filepath="$PROJECT_DIR$/AndroidStudioSpace.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app06_MotionEvent/app06_MotionEvent.iml" filepath="$PROJECT_DIR$/app06_MotionEvent/app06_MotionEvent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/heimaApp01_mobilesafe/heimaApp01_mobilesafe.iml" filepath="$PROJECT_DIR$/heimaApp01_mobilesafe/heimaApp01_mobilesafe.iml" />
     </modules>
   </component>
 </project>

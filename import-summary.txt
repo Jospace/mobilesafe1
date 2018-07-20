@@ -8,7 +8,7 @@ should evaluate whether these are still needed in your project and if
 so manually move them:
 
 * ic_launcher-web.png
-* mobileSign
+* note.txt
 * proguard-project.txt
 
 Replaced Jars with Dependencies:
@@ -28,11 +28,10 @@ Moved Files:
 Android Gradle projects use a different directory structure than ADT
 Eclipse projects. Here's how the projects were restructured:
 
-* AndroidManifest.xml => app\src\main\AndroidManifest.xml
-* assets\ => app\src\main\assets
-* libs\xUtils-2.6.14.jar => app\libs\xUtils-2.6.14.jar
-* res\ => app\src\main\res\
-* src\ => app\src\main\java\
+* AndroidManifest.xml => app06_MotionEvent\src\main\AndroidManifest.xml
+* assets\ => app06_MotionEvent\src\main\assets
+* res\ => app06_MotionEvent\src\main\res\
+* src\ => app06_MotionEvent\src\main\java\
 
 Next Steps:
 -----------
