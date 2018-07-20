@@ -14,7 +14,7 @@ import com.example.mobilesafe.utils.SpUtil;
 import com.example.mobilesafe.view.SettingItemView;
 
 
-public class Setup2Activity extends Activity {
+public class Setup2Activity extends BaseActivity {
 
 	private SettingItemView siv_bind;
 
@@ -25,6 +25,31 @@ public class Setup2Activity extends Activity {
 
 		//初始化控件
 		initUI();
+	}
+
+	@Override
+	protected void showNextPage() {
+		//判断是否绑定，如果绑定了，才跳转到下一页
+		String sim_num = SpUtil.getString(getApplicationContext(), ConstantValue.SIM_NUM, "");
+		if (!TextUtils.isEmpty(sim_num)) {
+			Intent intent = new Intent(getApplicationContext(), Setup3Activity.class);
+			startActivity(intent);
+			finish();
+			//设置平移动画
+			overridePendingTransition(R.anim.next_in_anim, R.anim.next_out_anim);
+		} else {
+			Toast.makeText(this, "请先绑定SIM卡", Toast.LENGTH_SHORT).show();
+		}
+	}
+
+	@Override
+	protected void showPrePage() {
+		Intent intent = new Intent(getApplicationContext(), Setup1Activity.class);
+		startActivity(intent);
+		finish();
+		//设置平移动画
+		overridePendingTransition(R.anim.pre_in_anim, R.anim.pre_out_anim);
+
 	}
 
 	private void initUI() {
@@ -46,38 +71,16 @@ public class Setup2Activity extends Activity {
 				//点击之后，将之前状态取反
 				siv_bind.setCheck(!isCheck);
 				//如果更改为选中，则需要存储sim卡序列号到sp中
-				if(!isCheck){
+				if (!isCheck) {
 					//获取sim卡序列号
 					TelephonyManager manager = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
 					String simSerialNumber = manager.getSimSerialNumber();
-					SpUtil.putString(getApplicationContext(),ConstantValue.SIM_NUM,simSerialNumber);
-				}else {
+					SpUtil.putString(getApplicationContext(), ConstantValue.SIM_NUM, simSerialNumber);
+				} else {
 					//否则删除sp中的SIM_NUM节点
-					SpUtil.remove(getApplicationContext(),ConstantValue.SIM_NUM);
+					SpUtil.remove(getApplicationContext(), ConstantValue.SIM_NUM);
 				}
 			}
 		});
-	}
-
-	public void nextPage(View v) {
-		//判断是否绑定，如果绑定了，才跳转到下一页
-		String sim_num = SpUtil.getString(getApplicationContext(), ConstantValue.SIM_NUM, "");
-		if(!TextUtils.isEmpty(sim_num)){
-		Intent intent = new Intent(getApplicationContext(), Setup3Activity.class);
-		startActivity(intent);
-		finish();
-		//设置平移动画
-		overridePendingTransition(R.anim.next_in_anim,R.anim.next_out_anim);
-		}else {
-			Toast.makeText(this, "请先绑定SIM卡", Toast.LENGTH_SHORT).show();
-		}
-	}
-
-	public void prePage(View v) {
-		Intent intent = new Intent(getApplicationContext(), Setup1Activity.class);
-		startActivity(intent);
-		finish();
-		//设置平移动画
-		overridePendingTransition(R.anim.pre_in_anim,R.anim.pre_out_anim);
 	}
 }

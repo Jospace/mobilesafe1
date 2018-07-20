@@ -14,7 +14,7 @@ import com.example.mobilesafe.R;
 import com.example.mobilesafe.activity.Setup2Activity;
 import com.example.mobilesafe.utils.SpUtil;
 
-public class Setup3Activity extends Activity {
+public class Setup3Activity extends BaseActivity {
 
 	private EditText et_phone_num;
 	private Button btn_select_contact;
@@ -26,6 +26,33 @@ public class Setup3Activity extends Activity {
 		//初始化UI
 		initUI();
 	}
+
+	@Override
+	protected void showNextPage() {
+		//判断输入框是否为空
+		String phone_num = et_phone_num.getText().toString();
+		if (!TextUtils.isEmpty(phone_num)) {
+			//存储输入框的电话号码到sp中
+			SpUtil.putString(getApplicationContext(), ConstantValue.PHONE_NUM, phone_num);
+			Intent intent = new Intent(getApplicationContext(), Setup4Activity.class);
+			startActivity(intent);
+			finish();
+			//设置平移动画
+			overridePendingTransition(R.anim.next_in_anim, R.anim.next_out_anim);
+		} else {
+			Toast.makeText(getApplicationContext(), "请输入电话号码！", Toast.LENGTH_SHORT).show();
+		}
+	}
+
+	@Override
+	protected void showPrePage() {
+		Intent intent = new Intent(getApplicationContext(), Setup2Activity.class);
+		startActivity(intent);
+		finish();
+		//设置平移动画
+		overridePendingTransition(R.anim.pre_in_anim, R.anim.pre_out_anim);
+	}
+
 	private void initUI() {
 		//显示电话号码的输入框
 		et_phone_num = (EditText) findViewById(R.id.et_phone_num);
@@ -43,40 +70,17 @@ public class Setup3Activity extends Activity {
 			}
 		});
 	}
+
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		//判断回传数据是否为空
-		if(data!=null){
+		if (data != null) {
 			String phone = data.getStringExtra("phone");
 			//过滤特殊字符，除去空格
-			phone = phone.replace("-","").replace(" ","").trim();
+			phone = phone.replace("-", "").replace(" ", "").trim();
 			//在输入框显示
 			et_phone_num.setText(phone);
 		}
 		super.onActivityResult(requestCode, resultCode, data);
-	}
-
-	public void nextPage(View v) {
-		//判断输入框是否为空
-		String phone_num = et_phone_num.getText().toString();
-		if(!TextUtils.isEmpty(phone_num)){
-			//存储输入框的电话号码到sp中
-			SpUtil.putString(getApplicationContext(),ConstantValue.PHONE_NUM,phone_num);
-			Intent intent = new Intent(getApplicationContext(), Setup4Activity.class);
-			startActivity(intent);
-			finish();
-			//设置平移动画
-			overridePendingTransition(R.anim.next_in_anim,R.anim.next_out_anim);
-		}else {
-			Toast.makeText(getApplicationContext(), "请输入电话号码！", Toast.LENGTH_SHORT).show();
-		}
-	}
-
-	public void prePage(View v) {
-		Intent intent = new Intent(getApplicationContext(), Setup2Activity.class);
-		startActivity(intent);
-		finish();
-		//设置平移动画
-		overridePendingTransition(R.anim.pre_in_anim,R.anim.pre_out_anim);
 	}
 }
