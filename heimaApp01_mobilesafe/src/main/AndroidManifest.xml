@@ -14,6 +14,8 @@
         android:minSdkVersion="18"
         android:targetSdkVersion="26" />
     <!-- 添加读取手机状态的权限 -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <!-- 添加联网权限 -->
     <uses-permission android:name="android.permission.INTERNET" />
@@ -21,8 +23,17 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <!--添加读取联系人的权限-->
-    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+    <!-- 添加读取联系人的权限 -->
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <!-- 添加接收开机广播的权限 -->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <!-- 添加发送短信的权限 -->
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <!-- 添加接收短信的权限 -->
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <!--添加获取GPS权限-->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
 
     <application
         android:allowBackup="true"
@@ -51,7 +62,17 @@
         <activity android:name=".activity.Setup2Activity" />
         <activity android:name=".activity.Setup3Activity" />
         <activity android:name=".activity.Setup4Activity" />
-        <activity android:name=".activity.ContactSelectActivity"></activity>
+        <activity android:name=".activity.ContactSelectActivity" />
+
+        <!-- 注册开机广播接收器 -->
+        <receiver android:name=".receiver.BootReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+
+        <!--服务-->
+        <service android:name=".service.LocationService"/>
     </application>
 
 </manifest>
