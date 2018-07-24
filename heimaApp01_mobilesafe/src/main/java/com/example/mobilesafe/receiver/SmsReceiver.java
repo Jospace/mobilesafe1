@@ -1,11 +1,15 @@
 package com.example.mobilesafe.receiver;
 
+import android.app.admin.DevicePolicyManager;
 import android.content.BroadcastReceiver;
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.media.MediaPlayer;
+import android.net.Uri;
 import android.telephony.SmsMessage;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.example.mobilesafe.R;
 import com.example.mobilesafe.activity.ConstantValue;
@@ -19,8 +23,16 @@ import static android.content.ContentValues.TAG;
  */
 
 public class SmsReceiver extends BroadcastReceiver {
+
+	private ComponentName componentName;
+	private DevicePolicyManager mDPM;
+
 	@Override
 	public void onReceive(Context context, Intent intent) {
+
+		componentName = new ComponentName(context, DeviceAdmin.class);
+		mDPM = (DevicePolicyManager) context.getSystemService(Context.DEVICE_POLICY_SERVICE);
+
 		//判断是否开启了防盗保护
 		boolean open_security = SpUtil.getBoolean(context, ConstantValue.OPEN_SECURITY, false);
 		if (open_security) {
@@ -43,12 +55,39 @@ public class SmsReceiver extends BroadcastReceiver {
 				}
 
 				//进行GPS追踪
-				if(messageBody.contains("#*location*#")){
+				if (messageBody.contains("#*location*#")) {
 					//开启获取经纬度的服务
-					context.startService(new Intent(context,LocationService.class));
+					context.startService(new Intent(context, LocationService.class));
+				}
+				//一键锁屏
+				if (messageBody.contains("#*lockscreen*#")) {
+					//判断是否激活,组件对象可以作为是否激活的判断标识
+					if (mDPM.isAdminActive(componentName)) {
+						mDPM.lockNow();
+						//锁屏同时去重置密码
+						mDPM.resetPassword("123", 0);
+					} else {
+						Toast.makeText(context, "请先激活！", Toast.LENGTH_SHORT).show();
+					}
+				}
+				//一键清除数据
+				if (messageBody.contains("#*wipadata*#")) {
+					//判断是否激活,组件对象可以作为是否激活的判断标识
+					if (mDPM.isAdminActive(componentName)) {
+						mDPM.wipeData(0);
+					} else {
+						Toast.makeText(context, "请先激活！", Toast.LENGTH_SHORT).show();
+					}
+				}
+				//一键卸载
+				if (messageBody.contains("#*uninstall*#")) {
+					//隐示意图开启卸载APP界面
+					Intent intent1 = new Intent("android.intent.action.DELETE");
+					intent1.addCategory("android.intent.category.DEFAULT");
+					intent1.setData(Uri.parse("package:"+ context.getPackageName()));
+					context.startActivity(intent1);
 				}
 			}
-
 		}
 	}
 }

@@ -4,5 +4,7 @@
     <string name="app_name">mobilesafe</string>
     <string name="title_activity_home">HomeActivity</string>
     <string name="title_activity_setting">SettingActivity</string>
+    <string name="sample_device_admin_description">一键锁屏，一键清除数据</string>
+    <string name="sample_device_admin">超级管理员</string>
 
 </resources>

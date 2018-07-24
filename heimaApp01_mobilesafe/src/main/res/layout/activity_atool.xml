@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        style="@style/TitleStyle"
+        android:text="高级工具" />
+
+    <TextView
+        android:id="@+id/tv_activity_atool_qp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:drawableLeft="@android:drawable/btn_star"
+        android:background="@drawable/selector_query_phone_address"
+        android:gravity="center"
+        android:text="归属地查询"
+        android:textSize="18sp" />
+</LinearLayout>

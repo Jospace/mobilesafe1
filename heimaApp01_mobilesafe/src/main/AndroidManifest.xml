@@ -31,9 +31,9 @@
     <uses-permission android:name="android.permission.SEND_SMS" />
     <!-- 添加接收短信的权限 -->
     <uses-permission android:name="android.permission.RECEIVE_SMS" />
-    <!--添加获取GPS权限-->
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <!-- 添加获取GPS权限 -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
     <application
         android:allowBackup="true"
@@ -71,8 +71,31 @@
             </intent-filter>
         </receiver>
 
-        <!--服务-->
-        <service android:name=".service.LocationService"/>
+        <!-- 注册接收短信广播接收器 -->
+        <receiver android:name=".receiver.SmsReceiver">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SMS_RECEIVED" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name=".receiver.DeviceAdmin"
+            android:description="@string/sample_device_admin_description"
+            android:label="@string/sample_device_admin"
+            android:permission="android.permission.BIND_DEVICE_ADMIN">
+            <meta-data
+                android:name="android.app.device_admin"
+                android:resource="@xml/device_admin_sample" />
+
+            <intent-filter>
+                <action android:name="android.app.action.DEVICE_ADMIN_ENABLED" />
+            </intent-filter>
+        </receiver>
+
+        <!-- 服务 -->
+        <service android:name=".service.LocationService" />
+
+        <activity android:name=".activity.AToolsActivity" />
+        <activity android:name=".activity.QueryAddressActivity"></activity>
     </application>
 
 </manifest>

@@ -1,8 +1,10 @@
 package com.example.mobilesafe.activity;
 
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -98,6 +100,54 @@ public class SplashActivity extends Activity {
 		initUI();
 		// 初始化数据
 		initData();
+		//初始化数据库
+		initDB();
+	}
+
+	/**
+	 * 初始化数据库
+	 */
+	private void initDB() {
+		//初始化归属地查询数据库
+		initAddressDB("address.db");
+	}
+
+	/**
+	 * 初始化归属地查询数据库
+	 */
+	private void initAddressDB(String dbName) {
+		InputStream is = null;
+		FileOutputStream fos = null;
+		//将数据库文件加载到应用的File文件夹下的file文件中
+		File filesDir = getFilesDir();
+		File file = new File(filesDir, dbName);
+		//如果file存在，直接返回
+		if(file.exists()){
+			return;
+		}
+		//如果不存在，加载assets文件夹中的数据
+		try {
+			is = getAssets().open(dbName);
+			//将读取的内容写到指定的文件中去
+			fos = new FileOutputStream(file);
+			//指定读取长度
+			byte[] bytes = new byte[1024];
+			int len = -1;
+			while ((len = is.read(bytes))!=-1){
+				fos.write(bytes,0,len);
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+		}finally {
+			if(is!=null && fos != null){
+				try {
+					is.close();
+					fos.close();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			}
+		}
 	}
 
 	/**

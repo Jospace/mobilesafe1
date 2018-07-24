@@ -64,6 +64,10 @@ public class HomeActivity extends Activity {
 						//弹出设置密码或输入密码的对话框
 						showDialog();
 						break;
+					case 7://高级工具
+						//弹出高级工具页面
+						startActivity(new Intent(getApplicationContext(),AToolsActivity.class));
+						break;
 					case 8://设置中心
 						Intent intent = new Intent(HomeActivity.this, SettingActivity.class);
 						startActivity(intent);
