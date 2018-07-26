@@ -1,45 +1,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" >
-
-    <!-- 将以下的相对布局抽取到单独的一个类中做管理，以后只需在布局文件中添加此类即可达到以下效果 -->
-    <!--
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="5dp" >
-
-        <TextView
-            android:id="@+id/tv_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="自动更新设置"
-            android:textSize="18sp" />
-
-        <TextView
-            android:id="@+id/tv_desc"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/tv_title"
-            android:text="自动更新已关闭"
-            android:textSize="18sp" />
-
-        <CheckBox
-            android:id="@+id/cb_box"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true" />
-
-        <View
-            android:layout_width="wrap_content"
-            android:layout_height="1dp"
-            android:layout_below="@id/tv_desc"
-            android:layout_marginTop="3dp"
-            android:background="#000" />
-    </RelativeLayout>
-    -->
+    android:orientation="vertical">
 
     <TextView
         style="@style/TitleStyle"
@@ -47,23 +9,25 @@
 
     <!--命名空间 xmlns:mobilesafe="http://schemas.android.com/apk/res/com.example.mobilesafe"-->
     <!--将android替换为当前应用包名-->
-    <com.example.mobilesafe.view.SettingItemView
-        xmlns:mobilesafe="http://schemas.android.com/apk/res/com.example.mobilesafe"
+    <com.example.mobilesafe.view.SettingItemView xmlns:mobilesafe="http://schemas.android.com/apk/res/com.example.mobilesafe"
         android:id="@+id/siv_setting"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        mobilesafe:destitle="自动更新设置"
+        mobilesafe:desoff="自动更新已关闭"
         mobilesafe:deson="自动更新已开启"
-        mobilesafe:desoff="自动更新已关闭">
-    </com.example.mobilesafe.view.SettingItemView>
+        mobilesafe:destitle="自动更新设置" />
 
-    <!--<com.example.mobilesafe.view.SettingItemView
-        xmlns:mobilesafe="http://schemas.android.com/apk/res/com.example.mobilesafe"
+    <com.example.mobilesafe.view.SettingItemView xmlns:mobilesafe="http://schemas.android.com/apk/res/com.example.mobilesafe"
+        android:id="@+id/siv_address"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        mobilesafe:destitle="电话归属地显示设置"
+        mobilesafe:desoff="归属地的显示已关闭"
         mobilesafe:deson="归属地的显示已开启"
-        mobilesafe:desoff="归属地的显示已关闭">
-    </com.example.mobilesafe.view.SettingItemView>-->
+        mobilesafe:destitle="电话归属地显示设置" />
+
+    <com.example.mobilesafe.view.SettingClickView
+        android:id="@+id/scv_toast_style"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
 </LinearLayout>

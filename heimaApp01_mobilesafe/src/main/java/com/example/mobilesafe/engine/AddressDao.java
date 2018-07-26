@@ -10,7 +10,7 @@ import android.database.sqlite.SQLiteDatabase;
 public class AddressDao {
 
 	public static String path = "data/data/com.example.mobilesafe/files/address.db";
-	private static String mAddress = "未知号码";
+	private static String mAddress;
 
 	/**
 	 * 查询数据库，获取手机号归属地
@@ -18,6 +18,7 @@ public class AddressDao {
 	 * @param phone 要查询的手机号码
 	 */
 	public static String getAddress(String phone) {
+		mAddress = "未知号码";
 		//使用正则表达式匹配手机号码
 		String regularExpression = "^1[3-8]\\d{9}";
 		boolean matches = phone.matches(regularExpression);

@@ -65,6 +65,35 @@ public class SpUtil {
 	}
 
 	/**
+	 * @param ctx 上下文对象
+	 * @param key 要存储的节点名称
+	 * @param value 存储的节点名称的值
+	 */
+	public static void putInt(Context ctx, String key, int value) {
+		//存储文件节点名称，读写方式
+		if(sp == null) {
+			sp = ctx.getSharedPreferences("config", Context.MODE_PRIVATE);
+		}
+		//得到sp编辑器,存入数据，提交
+		sp.edit().putInt(key, value).commit();
+
+	}
+	/**
+	 * @param ctx 上下文
+	 * @param key 节点名称
+	 * @param defValue 读取不到节点值时的默认值
+	 * @return 节点值或默认值
+	 */
+	public static int getInt(Context ctx, String key, int defValue) {
+		//存储文件节点名称，读写方式
+		if(sp == null) {
+			sp = ctx.getSharedPreferences("config", Context.MODE_PRIVATE);
+		}
+		//得到sp中对应节点的值
+		return sp.getInt(key, defValue);
+	}
+
+	/**
 	 * 删除sp中对应节点
 	 * @param ctx 上下文对象
 	 * @param key 节点
